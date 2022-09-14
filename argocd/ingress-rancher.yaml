@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: route-ingress-rancher
+  namespace: cattle-system
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - secretName: centerity
+  rules:
+  - host: console.adi.com
+    http:
+      paths:
+      - backend:
+          serviceName: rancher
+          servicePort: 80
