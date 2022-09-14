@@ -1,0 +1,165 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: elasticsearch-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/exporters/elasticsearch-exporter
+    repoURL: https://gitlab.com/adi/global-deployment.git
+    targetRevision: centos
+  syncPolicy:
+    automated: {}
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: influxdb-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/exporters/influxdb-exporter
+    repoURL: https://gitlab.com/apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: elasticsearch-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: elasticsearch-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/exporters/elasticsearch-exporter
+    repoURL: https://gitlab.com/adi/global-deployment.git
+    targetRevision: centos
+  syncPolicy:
+    automated: {}
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: influxdb-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/exporters/influxdb-exporter
+    repoURL: https://gitlab.com/apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: elasticsearch-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/exporters/elasticsearch-exporter
+    repoURL: https://gitlab.com/adi/global-deployment.git
+    targetRevision: centos
+  syncPolicy:
+    automated: {}
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: influxdb-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/exporters/influxdb-exporter
+    repoURL: https://gitlab.com/adi/global-deployment.git
+    targetRevision: centos
+  syncPolicy:
+    automated: {}
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-elasticsearch-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/exporters/prometheus-elasticsearch-exporter
+    repoURL: https://gitlab.com/adi/global-deployment.git
+    targetRevision: centos
+  syncPolicy:
+    automated: {}
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-kafka-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/exporters/prometheus-kafka-exporter
+    repoURL: https://gitlab.com/adi/global-deployment.git
+    targetRevision: centos
+  syncPolicy:
+    automated: {}
+
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-mysql-exporter
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/exporters/prometheus-mysql-exporter
+    repoURL: https://gitlab.com/adi/global-deployment.git
+    targetRevision: centos
+  syncPolicy:
+    automated: {}
+
+
+---
