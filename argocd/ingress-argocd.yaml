@@ -19,7 +19,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "5m"
 spec:
   tls:
-  - secretName: centerity
+  - secretName: adi
   rules:
 
   - host: argo.adi.com
