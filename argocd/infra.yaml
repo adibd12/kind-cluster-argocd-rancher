@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/infra-charts/redis
+    repoURL: https://gitlab.com/adi/global-deployment.git
+    targetRevision: centos
+  syncPolicy:
+    automated: {}
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgres
+  namespace: argocd
+spec:
+  destination:
+    namespace: adi
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: adi-charts/infra-charts/postgres
+    repoURL: https://gitlab.com/adi/global-deployment.git
+    targetRevision: centos
+  syncPolicy:
+    automated: {}
+
+---
+
