@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ui-ingress
+  namespace: adi
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    #nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "ui-ingress"
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "300s"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300s"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300s"
+    nginx.ingress.kubernetes.io/send-timeout: "300"
+    nginx.ingress.kubernetes.io/client-body-buffer-size: "5m"
+    nginx.ingress.kubernetes.io/proxy-body-size: "5m"
+spec:
+  tls:
+  - secretName: adi
+  rules:
+
+  - host: demo.adi.com
+    http:
+      paths:
+      - backend:
+          serviceName: ui-ingress
+          servicePort: 80
